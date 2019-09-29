@@ -1,0 +1,24 @@
+
+.react-card{
+    width: 80px;
+}
+.react-card-flip{
+    width: 100px!important;
+    display:inline-block!important;
+    height:100px!important;
+    padding:0px!important;
+}
+.react-card-flip img{
+    height: 80px;
+    width: 80px;
+    padding-top:6px;
+}
+.qr{
+    height: 80px;
+    width: 80px;
+}
+img{
+    height: 80px;
+    width: 80px;
+    padding-top:6px;
+}
