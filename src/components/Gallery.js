@@ -12,14 +12,12 @@ class Gallery extends Component {
         }
         this.handleClick = this.handleClick.bind(this);
         this.getProducts = this.getProducts.bind(this);
-
-
     }
     componentDidMount() {
         window.Twitch.ext.onAuthorized((auth) => {
             console.log('The JWT that will be passed to the EBS is', auth.token);
             console.log('The channel ID is', auth.channelId);
-            this.getProducts(auth.channelId);
+            this.getChannels(auth.channelId);
         });
     }
     getChannels(channelId) {
@@ -34,7 +32,7 @@ class Gallery extends Component {
             .then((data) => {
                 let channelList = data.records;
                 let foundChannel = false;
-                channelList.forEach(function ({ fields, id }, iteration) {
+                channelList.forEach( ({ fields, id }, iteration) => {
                     if (fields && fields.channel_id && fields.channel_id === channelId) {
                         console.log("Channel" + '\nID-' + fields.channel_id);
                         foundChannel = true;
